@@ -45,6 +45,10 @@ public class CartController extends HttpServlet {
 				case "/addcart":
 					 addToCart(request, response);
            break;
+				case "/delete":
+					deleteFormCard(request, response);
+		   break;
+		   
         default:
            break;
 			}
@@ -54,6 +58,12 @@ public class CartController extends HttpServlet {
 		}
 
 		response.sendRedirect("../ShoppingCart.jsp");
+	}
+	
+	private void deleteFormCard(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException, IOException{
+		
+		
 	}
 
   protected void addToCart(HttpServletRequest request, HttpServletResponse response)

@@ -21,6 +21,10 @@ public class ShoppingCart {
  public void addCartItem(CartItem cartItem) {
   cartItems.add(cartItem);
  }
+ 
+ public void deleteCard(CartItem cartItem) {
+	 cartItems.add(cartItem);
+ }
 
  public CartItem getCartItem(int iItemIndex) {
   CartItem cartItem = null;
