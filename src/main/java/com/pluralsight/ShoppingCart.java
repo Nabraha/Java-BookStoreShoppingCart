@@ -25,12 +25,22 @@ public class ShoppingCart {
  
  public void deleteCardItem(int index) {
   try {
-
    cartItems.remove(index);
   } catch (IndexOutOfBoundsException e){
    e.printStackTrace();
   }
  }
+
+ public void updateCardItem(int index, int quantity){
+  try {
+   CartItem cartItem = cartItems.get(index);
+   cartItem.setQuantity(quantity);
+  }catch (IndexOutOfBoundsException e){
+   e.printStackTrace();
+  }
+
+ }
+
 
  public CartItem getCartItem(int iItemIndex) {
   CartItem cartItem = null;
