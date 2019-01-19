@@ -15,7 +15,7 @@ public class CartController extends HttpServlet {
 		private static final long serialVersionUID = 1L;
 		private DBConnection dbConnection;
 
-		@Inject
+	@Inject
     private BookDAO bookDAO;
 
     public void init() {
@@ -62,6 +62,10 @@ public class CartController extends HttpServlet {
 	
 	private void deleteFormCard(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException{
+		HttpSession session = request.getSession();
+		int index = Integer.parseInt(request.getParameter("index"));
+		ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+		cart.deleteCardItem(index);
 		
 		
 	}

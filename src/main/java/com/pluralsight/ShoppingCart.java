@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import javax.inject.Inject;
 
 public class ShoppingCart {
- @Inject
+
+
  private ArrayList<CartItem> cartItems = new ArrayList<CartItem>();
  private double dblOrderTotal ;
 
@@ -22,8 +23,13 @@ public class ShoppingCart {
   cartItems.add(cartItem);
  }
  
- public void deleteCard(CartItem cartItem) {
-	 cartItems.add(cartItem);
+ public void deleteCardItem(int index) {
+  try {
+
+   cartItems.remove(index);
+  } catch (IndexOutOfBoundsException e){
+   e.printStackTrace();
+  }
  }
 
  public CartItem getCartItem(int iItemIndex) {

@@ -50,7 +50,6 @@ public class Module1_Task1_thru_4_IT {
 					cartForm = cartPage.getFormByName(CART_FORM_NAME);
 			} catch (ElementNotFoundException e) {}
 	  }
-
 	  @After
 	  public void tearDown() {
 	    webClient.closeAllWindows();
